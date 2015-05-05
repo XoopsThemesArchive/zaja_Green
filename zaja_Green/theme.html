@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+  
+<table class="zaja" border="0" align="center" cellpadding="2" cellspacing="0">
+  <tr>
+    <td> <table cellspacing="0">
+        <tr id="header"> 
+          <td colspan="3" id="headerbanner"><table width="100%" border="0" cellpadding="0" cellspacing="0" >
+              <tr> 
+                <td id="headerbanner1"></td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="266" id="headerbanner"><img src="<{$xoops_url}>/themes/Zaja_Green/logo.gif"/></td>
+                <td align="center"  id="headerbanner"><{$xoops_banner}></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td id="headerbar"> &nbsp;&nbsp;<{if $xoops_isuser}> Hey <a href="<{$xoops_url}>/user.php"><{$xoops_uname}></a>&nbsp;&nbsp;&nbsp;<a href="<{$xoops_url}>/user.php">Your 
+            Account </a>&nbsp; <{else}> <a href="<{$xoops_url}>/register.php">Register 
+            now </a> ! <{/if}> <{if $xoops_isuser}> <a href="<{$xoops_url}>/user.php?op=logout"></a> 
+            <{else}> &nbsp;&nbsp;&nbsp;<a href="<{$xoops_url}>/user.php">Login</a> 
+            <{/if}> </td>
+          <td id="headerbar"> <form action="<{$xoops_url}>/search.php" method="post">
+              <div align="right"> 
+                <input type="text" class="input" name="query" size="10" />
+                <input type="hidden" name="action" value="results" />
+                <input name="submit" type="submit" class="button" value="Search" />
+              </div>
+            </form></td>
+        </tr>
+      </table>
+      <table cellspacing="0">
+    <tr>
+      <td id="leftcolumn">
+        <!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="Zaja_Green/theme_blockleft.html"}>
+		  <img src="<{$xoops_imageurl}>160.gif" width="160" height="1" alt="" />
+        <{/foreach}>
+        <!-- End left blocks loop -->
+
+      </td>
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+          <tr>
+            <td id="centerCcolumn" colspan="2">
+
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="Zaja_Green/theme_blockcenter_c.html"}>
+            <{/foreach}>
+            <!-- End center-center blocks loop -->
+
+            </td>
+          </tr>
+          <tr>
+            <td id="centerLcolumn">
+
+            <!-- Start center-left blocks loop -->
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="Zaja_Green/theme_blockcenter_l.html"}>
+              <{/foreach}>
+            <!-- End center-left blocks loop -->
+
+            </td><td id="centerRcolumn">
+
+            <!-- Start center-right blocks loop -->
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="Zaja_Green/theme_blockcenter_r.html"}>
+              <{/foreach}>
+            <!-- End center-right blocks loop -->
+
+            </td>
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <td id="rightcolumn">
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+          <{include file="Zaja_Green/theme_blockright.html"}>
+		  <img src="<{$xoops_imageurl}>160.gif" width="160" height="1" alt="" />
+        <{/foreach}>
+        <!-- End right blocks loop -->
+      </td>
+
+      <{/if}>
+
+    </tr>
+  </table>
+
+  <table align="center" cellspacing="0">
+    <tr >
+          <td id="headerbar"><div align="center"><{$xoops_footer}><!-- Webmaster, dont remove this text. It denied by license! -->Design by <a href="http://www.7dana.com" target="_blank">7dana.com</a><!--End  "design by" text! --></div></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+</table>
+
+</body>
+</html>
